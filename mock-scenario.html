@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Freshdesk Ticket Workflow – Legacy Compatible</title>
+  <style type="text/css">
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #0052cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    h2 {
+      color: #0052cc;
+    }
+    .tabs {
+      margin-bottom: 20px;
+    }
+    .tab-button {
+      background-color: #eee;
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      cursor: pointer;
+      margin-right: 5px;
+      font-size: 13px;
+      display: inline-block;
+    }
+    .active-button {
+      background-color: #0052cc;
+      color: white;
+    }
+    .tab-content {
+      display: none;
+    }
+    .active-tab {
+      display: block;
+    }
+    .screenshot {
+      width: 100%;
+      max-width: 600px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+    }
+    .footer {
+      text-align: center;
+      color: #666;
+      margin: 20px 0;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Freshdesk Mock Ticket Workflow</h1>
+    <p>Legacy Compatible Version (IE8+)</p>
+  </div>
+
+  <div class="container">
+    <div class="tabs">
+      <span class="tab-button active-button" onclick="showTab('open')">Open</span>
+      <span class="tab-button" onclick="showTab('waiting')">Waiting on Customer</span>
+      <span class="tab-button" onclick="showTab('pending')">Pending (Internal)</span>
+      <span class="tab-button" onclick="showTab('resolved')">Resolved</span>
+      <span class="tab-button" onclick="showTab('closed')">Closed</span>
+    </div>
+
+    <div id="open" class="tab-content active-tab">
+      <h2>Status: Open</h2>
+      <img src="screenshots/ticket-open.png" alt="Ticket Opened" class="screenshot" />
+      <p><strong>Ticket ID:</strong> #1001</p>
+      <p><strong>Priority:</strong> High</p>
+      <p>User unable to access audiobook subscription after login.</p>
+    </div>
+
+    <div id="waiting" class="tab-content">
+      <h2>Status: Waiting on Customer</h2>
+      <img src="screenshots/response-step1.png" alt="Initial Response" class="screenshot" />
+      <p>Requested more details on device, browser, and recent changes.</p>
+    </div>
+
+    <div id="pending" class="tab-content">
+      <h2>Status: Pending (Internal)</h2>
+      <img src="screenshots/troubleshoot.png" alt="Troubleshooting" class="screenshot" />
+      <p>Confirmed subscription active. Reviewed logs and browser issues.</p>
+    </div>
+
+    <div id="resolved" class="tab-content">
+      <h2>Status: Resolved</h2>
+      <img src="screenshots/resolution.png" alt="Resolution" class="screenshot" />
+      <p>Advised user to clear browser cache. Subscription access restored.</p>
+    </div>
+
+    <div id="closed" class="tab-content">
+      <h2>Status: Closed</h2>
+      <img src="screenshots/follow-up.png" alt="Follow-up" class="screenshot" />
+      <p>Followed up and confirmed issue resolved. Ticket closed.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Created by Olivia G. – Freshdesk Workflow Practice • <a href="https://github.com/Scrunch1742/HelpDeskTraining">GitHub Repo</a>
+  </div>
+
+  <script type="text/javascript">
+    function showTab(id) {
+      var tabs = ['open', 'waiting', 'pending', 'resolved', 'closed'];
+      for (var i = 0; i < tabs.length; i++) {
+        var tab = document.getElementById(tabs[i]);
+        tab.className = 'tab-content';
+      }
+
+      var target = document.getElementById(id);
+      target.className = 'tab-content active-tab';
+
+      var buttons = document.getElementsByClassName('tab-button');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].className = 'tab-button';
+      }
+
+      var all = document.getElementsByClassName('tab-button');
+      for (var i = 0; i < all.length; i++) {
+        if (all[i].getAttribute('onclick').indexOf(id) > -1) {
+          all[i].className = 'tab-button active-button';
+          break;
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
