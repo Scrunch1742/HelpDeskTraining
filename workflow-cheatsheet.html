@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Freshdesk Workflow Reference Cheat Sheet</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    margin: 20px;
+  }
+  h1 {
+    color: #2a5d84;
+  }
+  h2 {
+    color: #34495e;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .ticket {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .status {
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #fff;
+  }
+  .open { background-color: #f39c12; }
+  .waiting { background-color: #3498db; }
+  .pending { background-color: #9b59b6; }
+  .resolved { background-color: #27ae60; }
+  .closed { background-color: #7f8c8d; }
+  .internal-note {
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+  }
+  .customer-msg, .agent-msg {
+    margin: 5px 0;
+  }
+  .agent-msg { color: #2c3e50; }
+  .customer-msg { color: #c0392b; }
+  .cheat-sheet-note {
+    background-color: #dfe6e9;
+    border-left: 5px solid #2a5d84;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #2c3e50;
+  }
+  .status-guide {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .status-guide span {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  .guide-open { background-color: #f39c12; }
+  .guide-waiting { background-color: #3498db; }
+  .guide-pending { background-color: #9b59b6; }
+  .guide-resolved { background-color: #27ae60; }
+  .guide-closed { background-color: #7f8c8d; }
+</style>
+</head>
+<body>
+
+<h1>Freshdesk Workflow Reference Cheat Sheet</h1>
+
+<div class="cheat-sheet-note">
+This is a reference cheat sheet showing a sample Freshdesk ticket workflow with statuses and agent actions. Use it to understand Open, Waiting on Customer, Pending, Resolved, and Closed statuses.
+</div>
+
+<div class="status-guide">
+<h2>Status Color Guide:</h2>
+<span class="guide-open">Open</span> New ticket, needs agent review<br>
+<span class="guide-waiting">Waiting on Customer</span> Waiting for customer info<br>
+<span class="guide-pending">Pending</span> Agent performing internal actions<br>
+<span class="guide-resolved">Resolved</span> Solution sent, waiting for confirmation<br>
+<span class="guide-closed">Closed</span> Ticket confirmed fixed and finished
+</div>
+
+<div class="ticket">
+  <div>Status: <span class="status open">Open</span></div>
+  <strong>Customer:</strong> Jane Doe<br>
+  <div class="customer-msg">"I can’t play any audiobooks after logging in today. It keeps showing an error."</div>
+  <div class="internal-note">New ticket, agent reviewing subscription and last login.</div>
+</div>
+
+<div class="ticket">
+  <div>Status: <span class="status waiting">Waiting on Customer</span></div>
+  <div class="agent-msg">"Hi Jane, please tell us which device and browser you’re using, and try clearing your cache."</div>
+  <div class="internal-note">Waiting for customer info to proceed.</div>
+</div>
+
+<div class="ticket">
+  <div>Status: <span class="status pending">Pending</span></div>
+  <div class="customer-msg">"I’m using Chrome on Windows 11, cleared cache, still not working."</div>
+  <div class="internal-note">Agent investigating: error caused by browser autoplay restriction.</div>
+</div>
+
+<div class="ticket">
+  <div>Status: <span class="status resolved">Resolved</span></div>
+  <div class="agent-msg">"We’ve updated your account settings. Please try playing your audiobooks again."</div>
+  <div class="internal-note">Agent believes issue is fixed, waiting for customer confirmation.</div>
+</div>
+
+<div class="ticket">
+  <div>Status: <span class="status closed">Closed</span></div>
+  <div class="customer-msg">"Yes! It works now, thank you!"</div>
+  <div class="internal-note">Ticket confirmed resolved and closed.</div>
+</div>
+
+</body>
+</html>
