@@ -32,7 +32,7 @@
     <h2>Featured GitHub Projects</h2>
     <ul>
         <li>
-            <a class="project-link" href="https://github.com/YourUsername/subscriber-faq-bot" target="_blank">Subscriber FAQ Bot</a> – Automates answers to common subscriber questions
+            <a class="project-link" href="https://github.com/YourUsername/subscriber-faq-bot](https://github.com/Scrunch1742/HelpDeskTraining/blob/main/cookies-cache-stories" target="_blank">Cookies and Cache</a> – Mini Stories Cheatsheet
         </li>
         
          
