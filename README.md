@@ -48,40 +48,7 @@
 </section>
 
 
- <h2>Cache & Cookies: Subscriber Mini-Stories</h2>
-   
 
-<h3>1. Login Problem – Cookie Issue 🍪</h3>
-    <p><strong>Story:</strong> I tried logging into my audiobook account like five times... and it just kept kicking me out 😩.</p>
-    <p><strong>Cause:</strong> Turns out, my browser forgot who I was. The login cookie expired or got deleted.</p>
-    
-<p><strong>Fix:</strong> I cleared cookies, restarted the browser, and logged in again. Boom, fixed! 🙌</p>
-    <p><em>Real talk:</em> Cookies are basically your ID card online. Don’t lose it!</p>
-
-<h2>2. Subscription Not Recognized – Cookie Issue 🎫</h2>
-    <p><strong>Story:</strong> My account is active, but the site kept saying “Subscribe now!” Like girl, I did 😤</p>
-    <p><strong>Cause:</strong> My subscription info was stored in a cookie that went MIA.</p>
-    <p><strong>Fix:</strong> I cleared cookies and logged in again. Now it knows I'm legit 💅</p>
-    <p><em>Tip:</em> If you paid, don't let your browser forget it. Cookies = proof.</p>
-
-<h2>3. New Content Missing – Cache Issue 📚</h2>
-    <p><strong>Story:</strong> They added a new audiobook and I couldn’t see it… meanwhile my friend was already listening 😭</p>
-    <p><strong>Cause:</strong> My browser was showing me an old version of the page (cached).</p>
-    <p><strong>Fix:</strong> I did a hard refresh (Ctrl+F5) and cleared the cache. Magic! ✨</p>
-    <p><em>Cache is like your browser’s scrapbook. Sometimes it gets stuck in the past lol.</em></p>
-
-<h2>4. Visual / UI Bugs – Cache Issue 🖼️</h2>
-    <p><strong>Story:</strong> The site looked broken. Stuff was missing, buttons were floating in space 😬</p>
-    <p><strong>Cause:</strong> Cached files (like layout and images) were corrupted or old.</p>
-    <p><strong>Fix:</strong> Cleared the cache → refreshed → everything was cute again 🧼</p>
-    <p><em>Lesson:</em> When stuff looks weird, it’s probably your cache being dramatic.</p>
-    <h2>5. Combined Issue – Cookies + Cache 🤯</h2>
-    <p><strong>Story:</strong> I logged in and saw old content AND the site thought I wasn’t subscribed. Like... rude?</p>
-    <p><strong>Cause:</strong> Both cookies and cache were out of sync.</p>
-    <p><strong>Fix:</strong> I cleared both cookies and cache → restarted browser → logged in → all good 💖</p>
-    <p><em>Pro tip:</em> When in doubt, wipe both. It’s like a fresh start ✨</p>
-    <hr>
-    <p><small>Made with 💻 + ☕ by Olivia. Hope this helped make tech feel a little less scary 💕</small></p>
   </body>
 </html>
 
