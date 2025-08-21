@@ -39,7 +39,7 @@
             
 
 
-<section>
+</section>
     <h2>Why Recruiters Should Consider Me</h2>
     <ul>
         <li>Hands-on projects directly relevant to subscriber support and help desk tasks</li>
