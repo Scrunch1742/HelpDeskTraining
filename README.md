@@ -9,7 +9,7 @@
 <body>
 
 <header>
-    <h1>Olivia Gasmen</h1>
+    <h1>Olivia G.</h1>
     <p>Aspiring Help Desk & Subscriber Support Specialist</p>
     <p>Email: gasmen.olivia@gmail.com | GitHub: <a href="https://github.com/YourUsername" target="_blank">Scrunch1742</a></p>
 </header>
