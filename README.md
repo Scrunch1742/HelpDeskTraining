@@ -11,7 +11,7 @@
 <header>
     <h1>Olivia G.</h1>
     <p>Aspiring Help Desk & Subscriber Support Specialist</p>
-    <p>Email: gasmen.olivia@gmail.com | GitHub: <a href="https://github.com/YourUsername" target="_blank">Scrunch1742</a></p>
+    <p>Email: gasmen.olivia@gmail.com | GitHub: Scrunch1742</a></p>
 </header>
 
 <section>
@@ -32,7 +32,7 @@
     <h2>Featured GitHub Projects</h2>
     <ul>
         <li>
-            <a class="project-link" href="https://github.com/YourUsername/subscriber-faq-bot](https://github.com/Scrunch1742/HelpDeskTraining/blob/main/cookies-cache-stories" target="_blank">Cookies and Cache</a> – Mini Stories Cheatsheet
+            <a class="project-link" href="https://github.com/Scrunch1742/HelpDeskTraining/blob/main/cookies-cache-stories" target="_blank">Cookies and Cache</a> – Mini Stories Cheatsheet
         </li>
         
          
