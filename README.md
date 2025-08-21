@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -26,7 +26,7 @@
         <li>Ticket tracking & issue management</li>
         <li>Knowledge base & support documentation</li>
    
-</section>
+
 
 <section>
     <h2>Featured GitHub Projects</h2>
@@ -37,7 +37,7 @@
         
          
             
-</section>
+
 
 <section>
     <h2>Why Recruiters Should Consider Me</h2>
@@ -45,12 +45,6 @@
         <li>Hands-on projects directly relevant to subscriber support and help desk tasks</li>
         <li>Active GitHub profile showing initiative & continuous learning</li>
     </ul>
-</section>
-
-
-
-  </body>
-</html>
 
 <footer>
     Thank you for visiting my portfolio!
