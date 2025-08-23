@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTTP Status Code Cheat Sheet</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; padding: 20px; }
+h1, h2 { color: #005a9c; }
+ul { line-height: 1.6; }
+pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<h1>HTTP Status Code Cheat Sheet</h1>
+
+<h2>1️⃣ 1xx – Informational</h2>
+<ul>
+<li>100 – Continue: Server received headers, waiting for body</li>
+<li>101 – Switching Protocols: Used for WebSockets upgrade</li>
+</ul>
+<p><em>Rarely used in support.</em></p>
+
+<h2>2️⃣ 2xx – Success</h2>
+<ul>
+<li>200 – OK: Standard success for GET/POST/PUT</li>
+<li>201 – Created: Resource successfully created (POST)</li>
+<li>202 – Accepted: Request accepted but not processed yet</li>
+<li>204 – No Content: Successful but no data returned (DELETE often)</li>
+</ul>
+<p><em>When to report: 200/201 → good, 202 → may indicate delayed processing.</em></p>
+
+<h2>3️⃣ 3xx – Redirection</h2>
+<ul>
+<li>301 – Moved Permanently: URL permanently changed</li>
+<li>302 – Found / Temporary Redirect: URL temporarily redirects</li>
+<li>304 – Not Modified: Browser cached resource, no need to reload</li>
+</ul>
+<p><em>When to report: Only if redirection is causing errors or loops.</em></p>
+
+<h2>4️⃣ 4xx – Client Errors</h2>
+<ul>
+<li>400 – Bad Request: Invalid request syntax; often a bug in front-end or form</li>
+<li>401 – Unauthorized: User not logged in / missing token</li>
+<li>403 – Forbidden: User doesn’t have permission</li>
+<li>404 – Not Found: Resource missing; report if API endpoint missing</li>
+<li>408 – Request Timeout: Client took too long; intermittent network issues</li>
+<li>429 – Too Many Requests: Rate limiting; can affect scripts or bots</li>
+</ul>
+<p><em>Most commonly reported in helpdesk or bug bounty: 401, 403, 404, 429.</em></p>
+
+<h2>5️⃣ 5xx – Server Errors</h2>
+<ul>
+<li>500 – Internal Server Error: Generic server error; escalate to devs</li>
+<li>501 – Not Implemented: Server cannot fulfill request method</li>
+<li>502 – Bad Gateway: Usually upstream server error / load balancer</li>
+<li>503 – Service Unavailable: Server temporarily down / maintenance</li>
+<li>504 – Gateway Timeout: Upstream server failed to respond in time</li>
+</ul>
+<p><em>Report all 5xx errors to devs immediately; include URL, method, timestamp.</em></p>
+
+<h2>Helpful Tips</h2>
+<ul>
+<li>Always note: URL, HTTP method (GET, POST, PUT, DELETE), and browser when reporting errors.</li>
+<li>Common bug bounty relevance: 4xx (authentication/authorization) & 5xx (server misconfig).</li>
+<li>Use DevTools network tab: Can filter by status code to quickly find failed requests.</li>
+</ul>
+
+</body>
+</html>
