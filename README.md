@@ -31,9 +31,12 @@
 <section>
     <h2>Featured GitHub Projects</h2>
     <ul>
-        <li>
-            <b>Cookies and Cache</b> – Mini Stories Cheatsheet
-        </li>
+        <li><a href="https://scrunch1742.github.io/HelpDeskTraining/mock-scenario.html" target="_blank">Mock Scenario</a> – Cache and Cookies Issue</li>
+      <li><a href="https://scrunch1742.github.io/HelpDeskTraining/video-playback.html" target="_blank">Mock Scenario</a> – Video Playback Issue</li>
+      <li><a href="https://scrunch1742.github.io/HelpDeskTraining/knowledge-base.html" target="_blank">Knowledge Base</a> – Practice</li>
+      <li><a href="https://scrunch1742.github.io/HelpDeskTraining/cookies-caches-stories.html" target="_blank">Cookies and Cache</a> – Mini Stories Cheatsheet</li>
+      <li><a href="https://scrunch1742.github.io/HelpDeskTraining/workflow-cheatsheet.html" target="_blank">FreshDesk Workflow</a> - Mock Workflow Cheatsheet</li> 
+      <li><a href="https://scrunch1742.github.io/HelpDeskTraining/status-code.html" target="_blank">Status Code</a> - Status Code Cheatsheet</li> 
         
          
             
