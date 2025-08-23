@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Helpdesk Practice: Firefox Video Playback Issue</title>
+<style>
+  body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background: #f4f4f4; color: #333; }
+  h1, h2, h3 { color: #005a9c; }
+  .ticket { background: #fff; padding: 15px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);}
+  .status { font-weight: bold; color: #e67e22; }
+  .agent { color: #27ae60; }
+  .customer { color: #c0392b; }
+  pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto;}
+</style>
+</head>
+<body>
+
+<h1>Helpdesk Mock Scenario: Firefox Video Playback Issue</h1>
+
+<div class="ticket">
+<h2>Customer Report</h2>
+<p class="customer">“Hi, I can log in and see the video library, but when I try to play any video on Firefox, it just stays loading forever. On Chrome it works perfectly. I cleared my cache and cookies but still no luck.”</p>
+</div>
+
+<div class="ticket">
+<h2>Agent Response – Step 1: Gather Browser Info</h2>
+<p class="agent">“Thanks for reporting this. Can you please tell me your Firefox version and operating system?”</p>
+<p class="customer">“Firefox 110.0 on Windows 10.”</p>
+</div>
+
+<div class="ticket">
+<h2>Agent Response – Step 2: Replicate Issue</h2>
+<p class="agent">Steps:</p>
+<pre>
+1. Download Firefox 110 from Mozilla archive: https://ftp.mozilla.org/pub/firefox/releases/
+2. Use a separate profile to avoid affecting main browser:
+   firefox.exe -P "Firefox110Profile"
+3. Open the site and try to play a video.
+</pre>
+</div>
+
+<div class="ticket">
+<h2>Agent Response – Step 3: Check Browser Capabilities</h2>
+<p class="agent">Use DevTools Console:</p>
+<pre>
+const v = document.createElement("video");
+["video/mp4; codecs='avc1.42E01E, mp4a.40.2'",
+ "video/webm; codecs='vp8, vorbis'",
+ "video/webm; codecs='vp9, opus'"]
+.forEach(type => console.log(type, "=>", v.canPlayType(type)));
+</pre>
+<p>Likely outcome: Firefox 110 may not support the format the site delivers.</p>
+</div>
+
+<div class="ticket">
+<h2>Agent Response – Step 4: Check Network/Playback</h2>
+<pre>
+1. Open Network tab → filter by 'media'
+2. Attempt playback → look for failed requests or CORS errors
+3. Console test:
+   const videoTest = document.createElement("video");
+   videoTest.src = "https://example.com/test.mp4";
+   videoTest.play().catch(e => console.error("Playback failed:", e));
+</pre>
+</div>
+
+<div class="ticket">
+<h2>Ticket Workflow</h2>
+<ul>
+<li><span class="status">Open:</span> Customer reports video not playing in Firefox.</li>
+<li><span class="status">Waiting on Customer:</span> Ask for Firefox version + OS.</li>
+<li><span class="status">Pending:</span> Agent replicates issue in same version, finds unsupported video format. Escalates to dev team.</li>
+<li><span class="status">Resolved:</span> Devs add compatible video format. Agent notifies customer.</li>
+<li><span class="status">Closed:</span> Customer confirms playback works in Firefox 110.</li>
+</ul>
+</div>
+
+<div class="ticket">
+<h2>Key Notes for Agents</h2>
+<ul>
+<li>Always ask for browser + version + OS first.</li>
+<li>Use archived builds or separate profiles to replicate.</li>
+<li>Playback issues are usually codec/format related, not network-only.</li>
+<li>Keep track of ticket statuses exactly: Open → Waiting → Pending → Resolved → Closed.</li>
+</ul>
+</div>
+
+</body>
+</html>
