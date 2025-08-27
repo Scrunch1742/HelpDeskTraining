@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ITIL Cheat Sheet</title>
+<title>ITIL 4 Complete Cheat Sheet</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@
         border-radius: 4px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .section h3 {
+    h3 {
         color: #2980b9;
         margin-top: 0;
     }
@@ -32,14 +32,20 @@
         list-style-type: disc;
         margin-left: 20px;
     }
-    .workflow {
-        margin: 20px 0;
-        padding: 10px;
-        background-color: #ecf0f1;
+    .workflow-box {
+        padding: 12px;
+        margin: 10px 0;
         border-radius: 6px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
     }
-    .workflow pre {
-        background-color: #bdc3c7;
+    .manual { background-color: #3498db; }       /* Manual task */
+    .automated { background-color: #27ae60; }   /* Automated task */
+    .approval { background-color: #e67e22; }    /* Approval step */
+    .arrow { text-align: center; font-size: 24px; line-height: 0.5; margin: 5px 0; }
+    pre {
+        background-color: #ecf0f1;
         padding: 10px;
         border-radius: 4px;
         overflow-x: auto;
@@ -54,23 +60,25 @@
 </head>
 <body>
 
-<h1>ITIL Key Concepts Cheat Sheet</h1>
+<h1>ITIL 4 Complete Cheat Sheet</h1>
+<h2>Key Concepts & Workflows</h2>
 
+<!-- Key Concepts -->
 <div class="section">
     <h3>1. Service</h3>
     <ul>
-        <li>Means of delivering value to customers by facilitating outcomes without them managing specific costs/risks.</li>
+        <li>Delivers value to customers by facilitating outcomes without managing costs/risks.</li>
         <li>Example: Email service, cloud storage, VPN access.</li>
-        <li><strong>Remember:</strong> Services create <em>value</em> for the customer, not just a technical product.</li>
+        <li><strong>Remember:</strong> Creates <em>value</em>, not just a product.</li>
     </ul>
 </div>
 
 <div class="section">
     <h3>2. Service Management</h3>
     <ul>
-        <li>Specialized organizational capabilities for delivering value via services.</li>
-        <li>Focus Areas: Processes, people, technology, governance.</li>
-        <li><strong>Remember:</strong> It’s about managing services end-to-end, not just IT support.</li>
+        <li>Organizational capabilities to deliver value via services.</li>
+        <li>Focus: Processes, people, technology, governance.</li>
+        <li><strong>Remember:</strong> End-to-end service management, not just IT support.</li>
     </ul>
 </div>
 
@@ -79,62 +87,59 @@
     <ul>
         <li>Perceived benefits, usefulness, and importance of a service.</li>
         <li>Example: Faster incident resolution improves productivity.</li>
-        <li><strong>Remember:</strong> Value is <em>outcome-focused</em>, not just output.</li>
+        <li><strong>Remember:</strong> Value is <em>outcome-focused</em>.</li>
     </ul>
 </div>
 
 <div class="section">
     <h3>4. Service Value System (SVS)</h3>
     <ul>
-        <li>Describes how all organizational components work together to create value.</li>
+        <li>How organizational components work together to create value.</li>
         <li><strong>Components:</strong></li>
         <ul>
-            <li><strong>Guiding Principles:</strong> Recommendations for decision-making.</li>
-            <li><strong>Governance:</strong> How the organization is directed and controlled.</li>
-            <li><strong>Service Value Chain:</strong> Activities that transform demand into value.</li>
-            <li><strong>Practices:</strong> Resources for performing work.</li>
-            <li><strong>Continual Improvement:</strong> Ongoing improvement of services and practices.</li>
+            <li>Guiding Principles – Recommendations for decision-making.</li>
+            <li>Governance – How the organization is directed and controlled.</li>
+            <li>Service Value Chain – Transforms demand into value.</li>
+            <li>Practices – Resources to perform work.</li>
+            <li>Continual Improvement – Ongoing improvement of services and practices.</li>
         </ul>
-        <li><strong>Remember:</strong> SVS ensures collaboration to create value consistently.</li>
+        <li><strong>Remember:</strong> SVS ensures consistent collaboration to create value.</li>
     </ul>
 </div>
 
-<div class="section workflow">
+<!-- Workflows -->
+<div class="section">
     <h3>Incident Management Workflow</h3>
-    <pre>
-Incident Logged
-      ↓
-Categorize & Prioritize
-      ↓
-Assign Technician
-      ↓
-Investigate & Diagnose
-      ↓
-Resolve & Recover
-      ↓
-Closure & Document
-    </pre>
+    <div class="workflow-box manual">Incident Logged</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box manual">Categorize & Prioritize</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box manual">Assign Technician</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box manual">Investigate & Diagnose</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box manual">Resolve & Recover</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box manual">Closure & Document</div>
 </div>
 
-<div class="section workflow">
+<div class="section">
     <h3>Service Request Fulfillment Workflow</h3>
-    <pre>
-Request Submitted
-      ↓
-Categorize & Prioritize
-      ↓
-Approval (if required)
-      ↓
-Assign Technician/System
-      ↓
-Fulfill Request
-      ↓
-Notify & Close
-    </pre>
+    <div class="workflow-box manual">Request Submitted</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box manual">Categorize & Prioritize</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box approval">Approval (if required)</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box manual">Assign Technician/System</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box automated">Fulfill Request</div>
+    <div class="arrow">↓</div>
+    <div class="workflow-box manual">Notify & Close</div>
 </div>
 
 <footer>
-    Created for hands-on ITIL practice
+    Created for hands-on ITIL 4 practice | Free resources roadmap
 </footer>
 
 </body>
