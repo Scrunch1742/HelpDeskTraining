@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Version Cheat Sheet for Testing</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      margin: 20px;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    h1, h2 {
+      color: #003366;
+    }
+    .section {
+      border: 1px solid #cccccc;
+      padding: 12px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+    }
+    code, pre {
+      background-color: #eeeeee;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: Consolas, monospace;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #cccccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #e6f0ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Browser Version Cheat Sheet for Testing</h1>
+
+  <div class="section">
+    <h2>1️⃣ Chrome – Older Version / Portable</h2>
+    <p><strong>Step 1 – Identify Customer Version</strong><br>
+    Example: <code>Chrome 117.0.5938.132</code></p>
+
+    <p><strong>Step 2 – Download Portable Build</strong></p>
+    <ul>
+      <li>Portable archive: <a href="https://www.slimjet.com/chrome/google-chrome-old-version.php">Slimjet Chrome Old Versions</a></li>
+      <li>Chromium snapshots (official, open-source): <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html">Chromium Snapshots</a></li>
+    </ul>
+
+    <p><strong>Step 3 – Extract &amp; Run</strong><br>
+    <code>C:\Browsers\Chrome117\chrome.exe</code></p>
+
+    <p>Optional: Use a separate profile:<br>
+    <code>chrome.exe --user-data-dir="C:\Browsers\Chrome117Profile"</code></p>
+
+    <p><strong>Step 4 – Verify Version</strong><br>
+    <code>chrome://version</code></p>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ Firefox – Older Version / Portable</h2>
+    <p><strong>Step 1 – Identify Customer Version</strong><br>
+    Example: <code>Firefox 102 ESR</code></p>
+
+    <p><strong>Step 2 – Download</strong><br>
+    Official Mozilla archive: <a href="https://ftp.mozilla.org/pub/firefox/releases/">https://ftp.mozilla.org/pub/firefox/releases/</a><br>
+    Pick version → OS → language → zip (portable)</p>
+
+    <p><strong>Step 3 – Extract &amp; Run</strong></p>
+    <p>Linux:</p>
+    <pre>tar -xvf firefox-102.15.0.tar.bz2
+./firefox/firefox</pre>
+    <p>Windows:</p>
+    <pre>C:\Browsers\Firefox102\firefox.exe</pre>
+
+    <p><strong>Step 4 – Optional: Use Separate Profile</strong><br>
+    <code>firefox.exe -P "Firefox102Profile"</code></p>
+
+    <p><strong>Step 5 – Verify Version</strong><br>
+    <code>about:support</code></p>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ Safari – Matching Customer Version</h2>
+    <p><strong>Step 1 – Identify Customer Version</strong><br>
+    Example: <code>Safari 15.6 on macOS Monterey</code></p>
+
+    <p><strong>Step 2 – Options to Test</strong></p>
+    <table>
+      <tr>
+        <th>Method</th>
+        <th>How</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>BrowserStack</td>
+        <td>Select Safari 15.6 → macOS Monterey → launch</td>
+        <td>Cloud-based, exact OS + browser</td>
+      </tr>
+      <tr>
+        <td>SauceLabs</td>
+        <td>Select version → live test</td>
+        <td>Cloud-based, no macOS required locally</td>
+      </tr>
+      <tr>
+        <td>Local macOS VM</td>
+        <td>Install macOS version matching customer</td>
+        <td>Safari version tied to OS; older Safari cannot install on newer macOS</td>
+      </tr>
+    </table>
+
+    <p><strong>Step 3 – Open DevTools &amp; Test</strong><br>
+    Shortcut: <code>Command + Option + I</code><br>
+    Replicate site behavior exactly like customer</p>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ Quick Tips for All Browsers</h2>
+    <ul>
+      <li>Always use a separate profile or portable build → prevents overwriting main browser.</li>
+      <li>Check version first using <code>chrome://version</code>, <code>about:support</code> (Firefox), or Safari → About Safari.</li>
+      <li>For Safari, cloud testing (BrowserStack/SauceLabs) is usually easiest.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
