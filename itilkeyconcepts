@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITIL 4 Cheat Sheet</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+        color: #2c3e50;
+        line-height: 1.6;
+    }
+    h1, h2 {
+        text-align: center;
+        color: #34495e;
+    }
+    .section {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px 0;
+        border-left: 6px solid #3498db;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .section h3 {
+        color: #2980b9;
+        margin-top: 0;
+    }
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+    .workflow {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #ecf0f1;
+        border-radius: 6px;
+    }
+    .workflow pre {
+        background-color: #bdc3c7;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<h1>ITIL 4 Key Concepts Cheat Sheet</h1>
+
+<div class="section">
+    <h3>1. Service</h3>
+    <ul>
+        <li>Means of delivering value to customers by facilitating outcomes without them managing specific costs/risks.</li>
+        <li>Example: Email service, cloud storage, VPN access.</li>
+        <li><strong>Remember:</strong> Services create <em>value</em> for the customer, not just a technical product.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h3>2. Service Management</h3>
+    <ul>
+        <li>Specialized organizational capabilities for delivering value via services.</li>
+        <li>Focus Areas: Processes, people, technology, governance.</li>
+        <li><strong>Remember:</strong> It’s about managing services end-to-end, not just IT support.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h3>3. Value</h3>
+    <ul>
+        <li>Perceived benefits, usefulness, and importance of a service.</li>
+        <li>Example: Faster incident resolution improves productivity.</li>
+        <li><strong>Remember:</strong> Value is <em>outcome-focused</em>, not just output.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h3>4. Service Value System (SVS)</h3>
+    <ul>
+        <li>Describes how all organizational components work together to create value.</li>
+        <li><strong>Components:</strong></li>
+        <ul>
+            <li><strong>Guiding Principles:</strong> Recommendations for decision-making.</li>
+            <li><strong>Governance:</strong> How the organization is directed and controlled.</li>
+            <li><strong>Service Value Chain:</strong> Activities that transform demand into value.</li>
+            <li><strong>Practices:</strong> Resources for performing work.</li>
+            <li><strong>Continual Improvement:</strong> Ongoing improvement of services and practices.</li>
+        </ul>
+        <li><strong>Remember:</strong> SVS ensures collaboration to create value consistently.</li>
+    </ul>
+</div>
+
+<div class="section workflow">
+    <h3>Incident Management Workflow</h3>
+    <pre>
+Incident Logged
+      ↓
+Categorize & Prioritize
+      ↓
+Assign Technician
+      ↓
+Investigate & Diagnose
+      ↓
+Resolve & Recover
+      ↓
+Closure & Document
+    </pre>
+</div>
+
+<div class="section workflow">
+    <h3>Service Request Fulfillment Workflow</h3>
+    <pre>
+Request Submitted
+      ↓
+Categorize & Prioritize
+      ↓
+Approval (if required)
+      ↓
+Assign Technician/System
+      ↓
+Fulfill Request
+      ↓
+Notify & Close
+    </pre>
+</div>
+
+<footer>
+    Created for hands-on ITIL practice
+</footer>
+
+</body>
+</html>
