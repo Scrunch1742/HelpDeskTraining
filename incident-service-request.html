@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITIL 4 Cheat Sheet: Incident vs Service Request</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f0f2f5;
+        color: #2c3e50;
+    }
+    h1, h2 {
+        text-align: center;
+        color: #34495e;
+    }
+    .workflow-container {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        margin-top: 30px;
+    }
+    .workflow-box {
+        display: table-cell;
+        vertical-align: top;
+        padding: 20px;
+    }
+    .box {
+        background-color: #3498db;
+        color: white;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 6px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .arrow {
+        text-align: center;
+        font-size: 24px;
+        line-height: 0.5;
+        margin: 5px 0;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+    li:before {
+        content: "✔";
+        color: #27ae60;
+        padding-right: 5px;
+    }
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<h1>ITIL 4 Cheat Sheet</h1>
+<h2>Incident Management vs Service Request Fulfillment</h2>
+
+<div class="workflow-container">
+    <!-- Incident Management -->
+    <div class="workflow-box">
+        <h3>Incident Management</h3>
+        <ul>
+            <li>Incident logged by user or monitoring system</li>
+            <li>Initial categorization & prioritization</li>
+            <li>Assigned to technician/team</li>
+            <li>Investigation and diagnosis</li>
+            <li>Resolution and recovery</li>
+            <li>Closure & documentation</li>
+            <li>Review for problem trends</li>
+        </ul>
+
+        <div class="box">Incident Logged</div>
+        <div class="arrow">↓</div>
+        <div class="box">Categorize & Prioritize</div>
+        <div class="arrow">↓</div>
+        <div class="box">Assign Technician</div>
+        <div class="arrow">↓</div>
+        <div class="box">Investigate & Diagnose</div>
+        <div class="arrow">↓</div>
+        <div class="box">Resolve & Recover</div>
+        <div class="arrow">↓</div>
+        <div class="box">Closure & Document</div>
+    </div>
+
+    <!-- Service Request Fulfillment -->
+    <div class="workflow-box">
+        <h3>Service Request Fulfillment</h3>
+        <ul>
+            <li>User submits a service request</li>
+            <li>Request categorization & prioritization</li>
+            <li>Approval if required</li>
+            <li>Assign to technician/system</li>
+            <li>Fulfill the request</li>
+            <li>Notify user & confirm completion</li>
+            <li>Closure & documentation</li>
+        </ul>
+
+        <div class="box">Request Submitted</div>
+        <div class="arrow">↓</div>
+        <div class="box">Categorize & Prioritize</div>
+        <div class="arrow">↓</div>
+        <div class="box">Approval (if required)</div>
+        <div class="arrow">↓</div>
+        <div class="box">Assign Technician/System</div>
+        <div class="arrow">↓</div>
+        <div class="box">Fulfill Request</div>
+        <div class="arrow">↓</div>
+        <div class="box">Notify & Close</div>
+    </div>
+</div>
+
+<footer>
+    Created for hands-on ITIL 4 practice | Free resources roadmap
+</footer>
+
+</body>
+</html>
