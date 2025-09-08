@@ -39,8 +39,7 @@
       <li><a href="https://scrunch1742.github.io/HelpDeskTraining/workflow-cheatsheet.html" target="_blank">FreshDesk Workflow</a> - Mock Workflow Cheatsheet</li> 
         <li><a href="https://scrunch1742.github.io/HelpDeskTraining/browser-testing.html" target="_blank">Browser Testing</a> – Cheatsheet</li>
       <li><a href="https://scrunch1742.github.io/HelpDeskTraining/status-code.html" target="_blank">Status Code</a> - Status Code Cheatsheet</li> 
-        <li><a href="https://scrunch1742.github.io/HelpDeskTraining/itilkeyconcepts.html" target="_blank">ITIL Key Concepts</a> - Cheatsheet</li> 
-    <li><a href="https://scrunch1742.github.io/HelpDeskTraining/incident-service-request.html" target="_blank">Incident Management Vs Service Request Fulfillment</a> - Cheatsheet</li> 
+    <li><a href="https://scrunch1742.github.io/HelpDeskTraining/printer-troubleshooting-guide.html)" target="_blank">Printer Troubleshooting</a> - Cheatsheet</li> 
 
         
          
