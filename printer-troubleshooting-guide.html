@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printer Troubleshooting Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3, h4 {
+      color: #2c3e50;
+    }
+    code, pre {
+      background: #eaeaea;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+    pre {
+      padding: 10px;
+      overflow-x: auto;
+    }
+    ul {
+      margin-bottom: 20px;
+    }
+    .note {
+      background-color: #dff0d8;
+      padding: 10px;
+      border-left: 5px solid #3c763d;
+      margin-bottom: 15px;
+    }
+    .warning {
+      background-color: #f2dede;
+      padding: 10px;
+      border-left: 5px solid #a94442;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Helpdesk Printer Troubleshooting Guide</h1>
+
+<p>This guide is designed for helpdesk technicians to walk end-users through printer troubleshooting step-by-step. It covers basic checks, OS/network troubleshooting, advanced steps, and escalation criteria.</p>
+
+<h2>1. Greeting & Quick Context</h2>
+<ul>
+  <li>"Hi — this is [Your Name] from Helpdesk. I’ll walk you through some quick checks to get your printer working. I’ll tell you exactly what to do; feel free to tell me what you see as we go."</li>
+</ul>
+
+<h2>2. Quick Questions to Ask</h2>
+<ul>
+  <li>"What’s the model/name on the printer display?"</li>
+  <li>"Is there an error message or flashing light? If so, what does it say/what color is it?"</li>
+  <li>"Can other people print to the same printer, or is it just you?"</li>
+  <li>"Are you printing from a computer connected by USB or from the network (Wi-Fi/ethernet)?"</li>
+</ul>
+
+<h2>3. Reassure & Set Expectations</h2>
+<ul>
+  <li>"I’ll try the fastest fixes first (power cycle, clear queue). If none work I’ll escalate and document everything. If I need you to press anything I’ll tell you exactly which button."</li>
+</ul>
+
+<h2>Level 1 — Quick Physical & User Checks (0–5 min)</h2>
+<ul>
+  <li><strong>Confirm the obvious:</strong> Power on, error lights, paper in tray, toner/ink level.</li>
+  <li><strong>Look for physical problems:</strong> Paper jams, low toner, misfeeds, torn paper.</li>
+  <li><strong>Connection check:</strong> USB cables, network cables, Wi-Fi connectivity.</li>
+  <li><strong>Power cycle:</strong> Turn printer off, unplug 10–30s, power on again.</li>
+</ul>
+
+<h2>Level 2 — OS/Queue & Basic Network Checks (5–15 min)</h2>
+<ul>
+  <li>Try a simple test print from the user’s computer.</li>
+  <li>Check print queue:
+    <ul>
+      <li>Windows: Settings → Printers & scanners → select printer → Open queue</li>
+      <li>If jobs are stuck, cancel all and try printing again.</li>
+    </ul>
+  </li>
+  <li>Restart Windows Print Spooler:
+    <pre>
+net stop spooler
+del /Q %windir%\System32\spool\PRINTERS\*.*
+net start spooler
+    </pre>
+  </li>
+  <li>Check printer status: Ensure it’s not set to “Use Printer Offline” and is default.</li>
+  <li>Ping the printer (network printers):
+    <pre>
+ping 192.168.x.x -n 4
+    </pre>
+  </li>
+</ul>
+
+<h2>Level 3 — Driver/Port/Protocol & Advanced Network (15–40 min)</h2>
+<ul>
+  <li>Confirm driver compatibility with OS; reinstall if needed.</li>
+  <li>Verify printer port and protocol; test port 9100:
+    <pre>
+Test-NetConnection -ComputerName 192.168.x.x -Port 9100
+    </pre>
+  </li>
+  <li>Print directly to printer by IP if needed.</li>
+  <li>Check printer firmware and advanced settings via web interface if reachable.</li>
+</ul>
+
+<h2>Level 4 — Hardware Faults / Onsite / Vendor Escalation</h2>
+<ul>
+  <li>Escalate if:
+    <ul>
+      <li>Repeated unfixable jams, fuser smell, hardware errors.</li>
+      <li>Printer unreachable but link lights indicate network issues.</li>
+      <li>Multiple users affected.</li>
+    </ul>
+  </li>
+  <li>Onsite steps:
+    <ul>
+      <li>Swap cables, test switch ports, verify network connectivity.</li>
+      <li>Replace printer if hardware fault persists.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Quick Commands & Checks</h2>
+<h3>Windows</h3>
+<pre>
+control printers  # Open print queue
+net stop spooler
+del /Q %windir%\System32\spool\PRINTERS\*.*
+net start spooler
+Get-Printer | Format-Table Name,PrinterStatus
+Get-PrintJob -PrinterName "PrinterName"
+Remove-PrintJob -PrinterName "PrinterName" -ID <jobId>
+Test-NetConnection -ComputerName 192.168.x.x -Port 9100
+</pre>
+
+<h3>macOS / Linux</h3>
+<pre>
+lpstat -p -d      # List printers & default
+lpstat -o          # Show jobs
+cancel -a          # Cancel all jobs
+cancel <jobid>     # Cancel specific job
+sudo systemctl restart cups  # Linux
+sudo launchctl stop org.cups.cupsd && sudo launchctl start org.cups.cupsd  # macOS
+</pre>
+
+<h2>Common Symptoms & Likely Causes</h2>
+<ul>
+  <li>Jobs stuck → Restart spooler & clear queue.</li>
+  <li>Offline → Check driver, port, ping printer IP.</li>
+  <li>Blank pages → Low toner/ink, driver language mismatch.</li>
+  <li>Paper jams → Wrong paper type, worn rollers.</li>
+  <li>Slow printing → Large/complex documents, adjust spool settings.</li>
+  <li>Authentication errors → User permissions.</li>
+  <li>Intermittent network printing → Cable, switch port, IP conflict.</li>
+</ul>
+
+<h2>Safety & Best Practices</h2>
+<ul>
+  <li>Use full power-off for persistent errors.</li>
+  <li>Remove jams carefully, avoid fuser area.</li>
+  <li>Use official drivers & firmware only.</li>
+  <li>Document all troubleshooting steps in the ticket.</li>
+</ul>
+
+<h2>Ticket Note Template</h2>
+<pre>
+Summary: [User Name] – Printer [Make & Model] – [Primary symptom]
+Location: [Building / Floor / Room]
+User contact: [phone/email]
+Repro steps: [What the user did to produce the error]
+Troubleshooting performed:
+ - Power/status: [on/off, error text]
+ - Physical checks: [paper, toner, jams]
+ - Connection: [USB / wired / Wi-Fi], IP: [192.168.x.x]
+ - Print queue actions: [cleared/restarted spooler]
+ - Network tests: [ping/port test results]
+ - Driver/firmware: [reinstalled/checked]
+Result: [e.g., prints test page / still stuck with code E123]
+Next steps/escalation: [on-site tech / vendor RMA / network team], priority: [Low/Med/High]
+</pre>
+
+<h2>Printable Checklist</h2>
+<ol>
+  <li>Printer powered on and error-free → Yes/No</li>
+  <li>Paper in tray & no jams → Yes/No</li>
+  <li>Toner/Ink OK → Yes/No</li>
+  <li>Cable plugged & link light lit → Yes/No</li>
+  <li>Power cycle printer → Done</li>
+  <li>Test print from panel → Success/Fail</li>
+  <li>Check queue; cancel stuck jobs → Done</li>
+  <li>Restart spooler / CUPS → Done</li>
+  <li>Ping printer IP; test port 9100 → OK/Fail</li>
+  <li>Reinstall driver / add by IP → Done</li>
+  <li>Escalate if hardware errors persist → Done</li>
+</ol>
+
+</body>
+</html>
